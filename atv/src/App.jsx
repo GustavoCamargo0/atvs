@@ -6,34 +6,39 @@ import api from "./services/api";
 function App() {
   const [usuarios, setUsuarios] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
   const [pesquisa, setPesquisa] = useState("");
+
 
   async function buscarUsuarios() {
     setLoading(true);
 
     try {
-      const response = await axios.get(api.defaults.baseURL);
+      const response = await api.get("/");
       setUsuarios(response.data);
     } catch (error) {
       console.error("Erro!", error);
+      setError(true);
     } finally {
       setLoading(false);
     }
   }
 
   useEffect(() => {
-    if (pesquisa.length > 2) {
-      axios
-        .get(
-          `https://jsonplaceholder.typicode.com/users?name_like=${pesquisa}`
-        )
+    if (pesquisa.length >= 1) {
+      axios.get(`https://jsonplaceholder.typicode.com/users?name_like=${pesquisa}`)
         .then((res) => setUsuarios(res.data))
-        .catch((err) => console.error(err));
+        .catch((err) => 
+          {console.error(err)
+          setError(true);
+        });
+
     }
   }, [pesquisa]);
 
   return (
     <div className="container">
+      {error ? (<p className="error">Ocorreu um erro ao buscar os usuários.</p>) : null}
       <div className="card">
         <h1>👥 Usuários API</h1>
 
