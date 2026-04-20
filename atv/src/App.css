@@ -1,0 +1,108 @@
+/* fundo geral */
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: white;
+}
+
+/* centraliza tudo */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* card principal */
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 30px;
+  border-radius: 20px;
+  width: 500px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* título */
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #3b82f6;
+}
+
+/* área de ações */
+.actions {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+/* botão */
+button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  background: #3b82f6;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #2563eb;
+  transform: scale(1.03);
+}
+
+/* input */
+input {
+  flex: 2;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+}
+
+/* loading */
+.loading {
+  text-align: center;
+  color: #cbd5e1;
+}
+
+/* lista */
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow-y: auto;
+  max-height: 400px;
+}
+
+/* card de usuário */
+.user-card {
+  background: rgba(255, 255, 255, 0.07);
+  padding: 15px;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+.user-card:hover {
+  background: rgba(255, 255, 255, 0.12);
+  transform: translateY(-2px);
+}
+
+.user-card h3 {
+  margin: 0;
+}
+
+.user-card p {
+  margin: 5px 0;
+  color: #93c5fd;
+}
+
+.user-card span {
+  font-size: 12px;
+  color: #cbd5e1;
+}
