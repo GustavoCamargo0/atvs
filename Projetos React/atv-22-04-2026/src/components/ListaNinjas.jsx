@@ -4,7 +4,7 @@ export default function ListaNinjas({ ninjas }) {
             <ul>
                 {ninjas.map((ninja) => (
                     <li key={ninja.id}>
-                        {ninja.nome} - {ninja.rank} - {ninja.jutsu} -{ninja.aldeiaNatal} 
+                        {ninja.nome} - {ninja.rank} - {ninja.jutsufix} -{ninja.aldeiaNatal} 
                     </li>
                 ))}
             </ul>
